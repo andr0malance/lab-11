@@ -1,0 +1,86 @@
+Cat koshka = new Cat("КОРМ", "КОРИДОР", "МАЛЫШ");
+Dog sobaka = new Dog("НОГА", "БУДКА", "БОБИК");
+Horse loshad = new Horse("ЯБЛОКО", "КОНЮШНЯ", "КАРТОШКА");
+koshka.sleep();
+koshka.eat();
+koshka.makeNoise();
+sobaka.eat();
+sobaka.makeNoise();
+sobaka.sleep();
+loshad.makeNoise();
+loshad.eat();
+loshad.sleep();
+class Animal
+{
+    public string food;
+    public string location;
+    public Animal(string food, string location)
+    {
+        this.food = food;
+        this.location = location;
+    }
+    public virtual void makeNoise()
+    {
+        Console.WriteLine("Животное издаёт звук");
+    }
+    public virtual void eat()
+    {
+        Console.WriteLine("Животное кушает");
+    }
+    public void sleep()
+    {
+        Console.WriteLine("Животное спит");
+    }
+
+}
+class Cat : Animal
+{
+    public string name;
+    public Cat(string food, string location, string name) : base(food, location) { this.name = name; }
+    public override void eat()
+    {
+        Console.WriteLine("Кошка : Кушает корм");
+    }
+    public override void makeNoise()
+    {
+        Console.WriteLine("Кошка : Орёт посреди ночи");
+    }
+    public void sleep()
+    {
+        Console.WriteLine("Кошка : кемарит");
+    }
+}
+class Dog : Animal
+{
+    public string name;
+    public Dog(string food, string location, string name) : base(food, location) { this.name = name; }
+    public override void eat()
+    {
+        Console.WriteLine("Собака : Кушает ногу");
+    }
+    public override void makeNoise()
+    {
+        Console.WriteLine("Собака : Лает");
+    }
+    public void sleep()
+    {
+        Console.WriteLine("Собака : не спит");
+    }
+}
+class Horse : Animal
+{
+    public string name;
+    public Horse(string food, string location, string name) : base(food, location) { this.name = name; }
+    public override void eat()
+    {
+        Console.WriteLine("Лошадь : кушает яблочко");
+    }
+    public override void makeNoise()
+    {
+        Console.WriteLine("Лошадь : Ржёт");
+    }
+    public void sleep()
+    {
+        Console.WriteLine("Лошадь : просто ушла");
+    }
+}
